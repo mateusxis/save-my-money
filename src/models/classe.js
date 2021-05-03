@@ -2,11 +2,11 @@ const { Schema, model } = require("mongoose");
 
 const ClasseSchema = new Schema(
   {
-    categoryId: {
+    category_id: {
       type: Schema.Types.ObjectId,
       ref: "Category",
     },
-    subcategoryId: {
+    subcategory_id: {
       type: Schema.Types.ObjectId,
       ref: "Subcategory",
     },
