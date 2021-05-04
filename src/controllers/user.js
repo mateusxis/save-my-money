@@ -1,4 +1,5 @@
 const userModel = require("../models/user");
+const { encryptPassword } = require("../utils/auth");
 
 const deleteUser = async (ctx) => {
   const { id } = ctx.params;
@@ -28,7 +29,7 @@ const storeUser = async (ctx) => {
   const user = await userModel.create({
     nickname,
     email,
-    password,
+    password: encryptPassword(password),
   });
 
   ctx.body = { data: user };
@@ -41,7 +42,7 @@ const updateUser = async (ctx) => {
   await userModel.findByIdAndUpdate(id, {
     nickname,
     email,
-    password,
+    password: encryptPassword(password),
   });
 
   ctx.redirect(`/user/${id}`);
