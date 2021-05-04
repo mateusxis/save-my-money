@@ -19,6 +19,7 @@
     "koa-cors": "^0.0.16",
     "koa-logger": "^3.2.1",
     "koa-router": "^10.0.0",
+    "mongoose": "^5.12.7",
     "zlib": "^1.0.5"
   },
   "devDependencies": {
