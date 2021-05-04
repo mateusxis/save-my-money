@@ -1,63 +1,50 @@
 const userModel = require("../models/user");
 
 const deleteUser = async (ctx) => {
-    const { id } = ctx.params;
+  const { id } = ctx.params;
 
-  await userModel.deleteOne({ _id: id }, () => {
-    // if (err) ctx.throw(err);
+  await userModel.deleteOne({ _id: id });
 
-    return ctx.body = "User deleted";
-  });
+  ctx.body = "User deleted";
 };
 
 const indexUser = async (ctx) => {
   const { id } = ctx.params;
 
-  await userModel.findById(id, (err, loggedUser) => {
-    // if (err) ctx.throw(err);
+  const user = await userModel.findById(id);
 
-    return ctx.body = { data: loggedUser };
-  });
+  ctx.body = { data: user };
 };
 
 const showUser = async (ctx) => {
-  await userModel.find({}, (err, users) => {
-    // if (err) ctx.throw(err);
+  const users = await userModel.find({});
 
-    return ctx.body = { data: users };
-  });
+  ctx.body = { data: users };
 };
 
 const storeUser = async (ctx) => {
   const { nickname, email, password } = ctx.request.body;
 
-  await userModel.create(
-    {
-      nickname,
-      email,
-      password,
-    },
-    (err, user) => {
-      // if (err) ctx.throw(err);
+  const user = await userModel.create({
+    nickname,
+    email,
+    password,
+  });
 
-      return ctx.body = { data: user };
-    }
-  );
+  ctx.body = { data: user };
 };
 
 const updateUser = async (ctx) => {
   const { nickname, email, password } = ctx.request.body;
   const { id } = ctx.params;
 
-  await userModel.findByIdAndUpdate(
-    id,
-    { nickname, email, password },
-    (err, user) => {
-      // if (err) ctx.throw(err);
+  await userModel.findByIdAndUpdate(id, {
+    nickname,
+    email,
+    password,
+  });
 
-      return ctx.body = { data: user };
-    }
-  );
+  ctx.redirect(`/user/${id}`);
 };
 
 module.exports = {
