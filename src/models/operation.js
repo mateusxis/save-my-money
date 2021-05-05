@@ -3,11 +3,11 @@ const { Schema, model } = require("mongoose");
 const OperationSchema = new Schema(
   {
     balance_last: {
-        type: Float,
+        type: Number,
         required: true
     },
     balance_now: {
-        type: Float,
+        type: Number,
         required: true
     },
     rollback: Date,
