@@ -7,7 +7,7 @@ const DebitSchema = new Schema(
         required: true
     },
     value: {
-        type: Float,
+        type: Number,
         required: true
     },
     date_payment: Date,

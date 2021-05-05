@@ -7,7 +7,7 @@ const CreditSchema = new Schema(
         required: true
     },
     value: {
-        type: Float,
+        type: Number,
         required: true
     },
     date_payment: Date,
