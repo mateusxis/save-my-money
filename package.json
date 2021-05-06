@@ -1,6 +1,6 @@
 {
   "name": "save-my-money",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "API repository to save my money",
   "main": "src/server.js",
   "repository": "https://github.com/mateusxis/save-my-money",
