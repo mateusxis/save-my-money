@@ -13,13 +13,13 @@ const indexMethodPayment = async (ctx) => {
 
   const methodPayment = await methodPaymentModel.findById(id);
 
-  ctx.body = { data: methodPayment };
+  ctx.body = { methodPayment };
 };
 
 const showMethodPayment = async (ctx) => {
   const methodPayments = await methodPaymentModel.find({});
 
-  ctx.body = { data: methodPayments };
+  ctx.body = { methodPayments };
 };
 
 const storeMethodPayment = async (ctx) => {
@@ -29,7 +29,7 @@ const storeMethodPayment = async (ctx) => {
     name
   });
 
-  ctx.body = { data: methodPayment };
+  ctx.body = { methodPayment };
 };
 
 const updateMethodPayment = async (ctx) => {

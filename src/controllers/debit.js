@@ -13,13 +13,13 @@ const indexDebit = async (ctx) => {
 
   const debit = await debitModel.findById(id);
 
-  ctx.body = { data: debit };
+  ctx.body = { debit };
 };
 
 const showDebit = async (ctx) => {
   const debits = await debitModel.find({});
 
-  ctx.body = { data: debits };
+  ctx.body = { debits };
 };
 
 const storeDebit = async (ctx) => {
@@ -43,7 +43,7 @@ const storeDebit = async (ctx) => {
     method_payment_id,
   });
 
-  ctx.body = { data: debit };
+  ctx.body = { debit };
 };
 
 const updateDebit = async (ctx) => {

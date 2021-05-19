@@ -13,13 +13,13 @@ const indexSubcategory = async (ctx) => {
 
   const subcategory = await subcategoryModel.findById(id);
 
-  ctx.body = { data: subcategory };
+  ctx.body = { subcategory };
 };
 
 const showSubcategory = async (ctx) => {
   const categories = await subcategoryModel.find({});
 
-  ctx.body = { data: categories };
+  ctx.body = { categories };
 };
 
 const storeSubcategory = async (ctx) => {
@@ -29,7 +29,7 @@ const storeSubcategory = async (ctx) => {
     name
   });
 
-  ctx.body = { data: subcategory };
+  ctx.body = { subcategory };
 };
 
 const updateSubcategory = async (ctx) => {

@@ -13,13 +13,13 @@ const indexCredit = async (ctx) => {
 
   const credit = await creditModel.findById(id);
 
-  ctx.body = { data: credit };
+  ctx.body = { credit };
 };
 
 const showCredit = async (ctx) => {
   const credits = await creditModel.find({});
 
-  ctx.body = { data: credits };
+  ctx.body = { credits };
 };
 
 const storeCredit = async (ctx) => {
@@ -32,7 +32,7 @@ const storeCredit = async (ctx) => {
     origin_id,
   });
 
-  ctx.body = { data: credit };
+  ctx.body = { credit };
 };
 
 const updateCredit = async (ctx) => {

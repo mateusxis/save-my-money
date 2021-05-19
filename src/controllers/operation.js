@@ -13,13 +13,13 @@ const indexOperation = async (ctx) => {
 
   const operation = await operationModel.findById(id);
 
-  ctx.body = { data: operation };
+  ctx.body = { operation };
 };
 
 const showOperation = async (ctx) => {
   const operations = await operationModel.find({});
 
-  ctx.body = { data: operations };
+  ctx.body = { operations };
 };
 
 const storeOperation = async (ctx) => {
@@ -39,7 +39,7 @@ const storeOperation = async (ctx) => {
     debit_id,
   });
 
-  ctx.body = { data: operation };
+  ctx.body = { operation };
 };
 
 const updateOperation = async (ctx) => {

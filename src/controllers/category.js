@@ -13,13 +13,13 @@ const indexCategory = async (ctx) => {
 
   const category = await categoryModel.findById(id);
 
-  ctx.body = { data: category };
+  ctx.body = { category };
 };
 
 const showCategory = async (ctx) => {
   const categories = await categoryModel.find({});
 
-  ctx.body = { data: categories };
+  ctx.body = { categories };
 };
 
 const storeCategory = async (ctx) => {
@@ -29,7 +29,7 @@ const storeCategory = async (ctx) => {
     name
   });
 
-  ctx.body = { data: category };
+  ctx.body = { category };
 };
 
 const updateCategory = async (ctx) => {

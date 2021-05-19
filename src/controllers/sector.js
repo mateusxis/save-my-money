@@ -13,13 +13,13 @@ const indexSector = async (ctx) => {
 
   const sector = await sectorModel.findById(id);
 
-  ctx.body = { data: sector };
+  ctx.body = { sector };
 };
 
 const showSector = async (ctx) => {
   const sectors = await sectorModel.find({});
 
-  ctx.body = { data: sectors };
+  ctx.body = { sectors };
 };
 
 const storeSector = async (ctx) => {
@@ -29,7 +29,7 @@ const storeSector = async (ctx) => {
     name
   });
 
-  ctx.body = { data: sector };
+  ctx.body = { sector };
 };
 
 const updateSector = async (ctx) => {

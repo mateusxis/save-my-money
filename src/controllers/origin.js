@@ -13,13 +13,13 @@ const indexOrigin = async (ctx) => {
 
   const origin = await originModel.findById(id);
 
-  ctx.body = { data: origin };
+  ctx.body = { origin };
 };
 
 const showOrigin = async (ctx) => {
   const origins = await originModel.find({});
 
-  ctx.body = { data: origins };
+  ctx.body = { origins };
 };
 
 const storeOrigin = async (ctx) => {
@@ -29,7 +29,7 @@ const storeOrigin = async (ctx) => {
     name
   });
 
-  ctx.body = { data: origin };
+  ctx.body = { origin };
 };
 
 const updateOrigin = async (ctx) => {

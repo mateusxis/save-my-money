@@ -13,13 +13,13 @@ const indexClasse = async (ctx) => {
 
   const classe = await classeModel.findById(id);
 
-  ctx.body = { data: classe };
+  ctx.body = { classe };
 };
 
 const showClasse = async (ctx) => {
   const classes = await classeModel.find({});
 
-  ctx.body = { data: classes };
+  ctx.body = { classes };
 };
 
 const storeClasse = async (ctx) => {
@@ -30,7 +30,7 @@ const storeClasse = async (ctx) => {
     subcategory_id,
   });
 
-  ctx.body = { data: classe };
+  ctx.body = { classe };
 };
 
 const updateClasse = async (ctx) => {

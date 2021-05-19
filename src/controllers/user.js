@@ -14,13 +14,13 @@ const indexUser = async (ctx) => {
 
   const user = await userModel.findById(id);
 
-  ctx.body = { data: user };
+  ctx.body = { user };
 };
 
 const showUser = async (ctx) => {
   const users = await userModel.find({});
 
-  ctx.body = { data: users };
+  ctx.body = { users };
 };
 
 const storeUser = async (ctx) => {
@@ -32,7 +32,7 @@ const storeUser = async (ctx) => {
     password: encryptPassword(password),
   });
 
-  ctx.body = { data: user };
+  ctx.body = { user };
 };
 
 const updateUser = async (ctx) => {
